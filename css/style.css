@@ -1,0 +1,359 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.inside {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 20;
+}
+
+.frame {
+    width: 50vw;
+    height: 80vh;
+    border-radius: 30px;
+    background-color: rgb(255, 244, 231);
+    border: 0.1px solid black;
+
+}
+
+.frame > .head {
+    width: 100%;
+    height: 55%;
+}
+
+.inputs {
+    width: 100%;
+}
+
+.bmi-div {
+    justify-content: space-between;
+    padding-top: 20px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    height: 20%;
+    width: 100%;
+}
+
+.gender-div {
+    margin-bottom: 3vh;
+    width: 340px
+}
+
+.gender-div > h3 {
+    margin-right: 4vh;
+}
+
+.gender-div > div {
+    width: 30%;
+    padding-left: 5px;
+}
+
+.gender-div > div > label {
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.gender-div > div > input {
+    height: 12px;
+    width: 12px;
+    margin-right: 5px;
+}
+
+.bmi-div > .person-index {
+    display: flex;
+    width: 30%;
+}
+
+.bmi-div > div > input {
+    height: 30%;
+    width: 30%;
+}
+
+.bmi-div > div > label {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.width-height {
+    height: 75%;
+    width: 100%;
+    padding-left: 20px;
+}
+ 
+.width-height > .main-photo-div {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 25%;
+}
+
+.width-height > div > .main-photo {
+    height: 100%;
+    width: 50%;
+}
+
+.width-height > div > button {
+    height: 40px;
+    width: 110px;
+    border-radius: 25px;
+    border: 1px solid black;
+}
+
+#calculate {
+    background-color: rgb(162, 255, 23);
+    margin-right: 10px;
+    transition: all 0.5s;
+}
+
+#calculate:hover {
+    background-color: rgb(26, 255, 0);
+    -webkit-box-shadow: 0px 0px 9px 0px rgb(1, 154, 22);
+    -moz-box-shadow: 0px 0px 9px 0px rgb(1, 154, 22);
+    box-shadow: 0px 0px 9px 0px rgb(1, 154, 22);
+}
+
+#reset {
+    background-color: rgb(255, 66, 66);
+    transition: all 0.5s;
+}
+
+#reset:hover {
+    background-color: rgb(255, 0, 0);
+    -webkit-box-shadow: 0px 0px 9px 0px rgb(255, 0, 0);
+    -moz-box-shadow: 0px 0px 9px 0px rgb(255, 0, 0);
+    box-shadow: 0px 0px 9px 0px rgb(255, 0, 0);
+}
+
+.width-div, .height-div {
+    width: 350px;
+    margin-bottom: 2vh;
+    height: 50px;
+}
+
+.height-div > h3, .width-div > h3 {
+    margin-right: 20px;
+    height: 45px;
+    padding-top: 10px;
+}
+
+.width-div > input, .height-div > input {
+    height: 30px;
+    width: 220px;
+    padding-left: 5px;
+    border: 0.5px solid black;
+}
+
+.frame > .info-div {
+    width: 100%;
+    height: 45%;
+}
+
+.frame > .phone {
+    display: none;
+}
+
+.info-div > div {
+    padding: 0 15px;
+    height: 35vh;
+}
+
+.info-div > div > div {
+    width: 10vw;
+}
+
+.info-div > div > div > .info-img {
+    height: 25vh;
+    width: 5vw;
+}
+
+.arrow {
+    height: 50px;
+    width: 150px;
+    font-size: 18px;
+    background-color: greenyellow;
+    border: none;
+    clip-path: polygon(75% 20%, 100% 50%, 75% 80%, 0 80%, 25% 50%, 0 20%);
+}
+
+.arrow1 {
+    background-color: #53C9F7;
+}
+
+.arrow2 {
+    background-color: #9BB50C;
+}
+
+.arrow3 {
+    background-color: #F9C801;
+}
+
+.arrow4 {
+    background-color: #F58A20;
+}
+
+.arrow5 {
+    background-color: #F73F01;
+}
+
+.main {
+    position: absolute;
+    z-index: 10;
+}
+
+.main2 {
+    display: inline-flex;
+    margin-top: -32px;
+    margin-left: -50px;
+}
+
+.main2:nth-child(even) {
+    margin-left: 2px;
+}
+
+.hexagon {
+    width: 100px;
+    height: 113px;
+    margin: 2px;
+    background-color: rgb(255, 203, 203);
+    clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    animation: hover 5s linear infinite;
+    transition: 1s;
+}
+
+.hexagon:hover {
+    background-color: rgb(0, 255, 26);
+    transition: 0s;
+}
+
+@keyframes hover {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+/*Responsive Design*/
+
+@media all and (max-width: 920px) {
+    .main {
+        display: none;
+    }
+
+    .bmi-div {
+        justify-content: space-around;
+        padding-left: 5px;
+    }
+
+    .bmi-div > .bmi  {
+        width: 100%;
+    }
+
+    .gender-div {
+        width: 100%;
+    } 
+
+    .gender-div > h3 {
+        font-size: 20px;
+        padding-top: 5px;
+    }  
+
+    .width-div, .height-div {
+        width: 100%;
+    }
+
+    .width-div > h3, .height-div > h3 {
+        font-size: 20px;
+        padding-top: 15px;
+    }
+
+    .bmi-div > .person-index {
+        display: none;
+    }
+
+    .gender-div > .male-div {
+        width: 20%;
+        padding: 0;
+    }
+    
+    .gender-div > .female-div {
+        width: 30%;
+        padding: 0;
+    }
+
+    .frame {
+        width: 100vw;
+        height: 100vh;
+        border-radius: 0px;
+    }
+    
+    .frame > .phone {
+        width: 100%;
+        height: 45%;
+    }
+    .main-photo-phone-div {
+        width: 100%;
+        height: 100%;
+    }
+    .main-photo-phone {
+        height: 90%;
+    }
+
+    .phone > .phone-info {
+        width: 55%;
+    }
+
+    .phone > .phone-info > div {
+        height: 20%;
+    }
+
+    .phone > .phone-info > div > h5 {
+        margin: 0;
+    }
+
+    .phone > .phone-info > div > button {
+        height: 60%;
+    }
+
+    .phone > .phone-index {
+        width: 45%;
+    }
+
+    .phone > .phone-index > .person-index-phone {
+        width: 100%;
+    }
+    
+    .width-height {
+        padding-left: 10px;
+        margin-top: 40px;
+        padding-right: 10px;
+    }
+
+    .width-height > div {
+        width: 100%;
+    }
+
+    .width-div > input, .height-div > input {
+        width: 60%;
+        padding-left: 5px;
+        margin-right: 10px;
+        border: 0.5px solid black;
+    }
+
+    .width-height > .main-photo-div {
+        display: none;
+    }
+    .info-div {
+        display: none;
+    }
+}

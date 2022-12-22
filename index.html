@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <link rel="shortcut icon" href="./images/body-mass-index.png">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <title>Body Mass Index</title>
+</head>
+<body>
+    <section class="inside">
+        <div class="frame">
+            <div class="head d-flex justify-content-between">
+                <div class="inputs">
+                    <div class="d-flex bmi-div">
+                        <div class="bmi d-flex">
+                            <h3>Body Mass Index</h3>
+                        </div>
+                        
+                        <div class="person-index justify-content-center">
+                            <div class="d-flex justify-content-center">
+                                <h4 class="">Your Index: ‏</h4>
+                                <h4 id="result" class="">0.00</h4>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="width-height d-flex justify-content-between">
+                        <div>
+                            <div class="gender-div d-flex justify-content-between">
+                                <h3>Gender</h3>
+                                <div class="d-flex align-items-center male-div">
+                                    <input id="male" type="radio" name="gender" value="male" checked="checked">
+                                    <label for="male">Male</label>
+                                </div>
+                                <div class="d-flex align-items-center female-div">
+                                    <input id="female" type="radio" name="gender" value="female">
+                                    <label for="female">Female</label>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between width-div">
+                                <h3>Weight</h3>
+                                <input type="number" id="width-value" placeholder="65" min="1" max="600">
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between height-div">
+                                <h3>Height</h3>
+                                <input type="number" id="height-value" placeholder="184" min="65" max="300">
+                            </div>
+                            <button type="button" id="calculate">Calculate<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M21.426,11.095l-17-8c-0.35-0.163-0.763-0.112-1.061,0.133C3.066,3.473,2.937,3.868,3.03,4.242L4.969,12L3.03,19.758	c-0.094,0.374,0.036,0.77,0.335,1.015C3.548,20.923,3.772,21,4,21c0.145,0,0.29-0.031,0.426-0.095l17-8	C21.776,12.74,22,12.388,22,12S21.776,11.26,21.426,11.095z M5.481,18.197L6.32,14.84L12,12L6.32,9.16L5.481,5.803L18.651,12	L5.481,18.197z"></path></svg></button>
+                            <button type="reset" id="reset">Reset<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path fill="none" stroke="#000" stroke-width="2" d="M20,8 C18.5974037,5.04031171 15.536972,3 12,3 C7.02943725,3 3,7.02943725 3,12 C3,16.9705627 7.02943725,21 12,21 L12,21 C16.9705627,21 21,16.9705627 21,12 M21,3 L21,9 L15,9"></path></svg></button>
+                        </div>
+                        <div class="main-photo-div">
+                            <img class="main-photo" src="/images/m1.png" alt="photo">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="info-div">
+                <div class="d-flex justify-content-between">
+                    <div class="d-flex flex-column align-items-center">
+                        <img class="info-img m1" src="/images/m1.png" alt="photo">
+                        <button class="arrow arrow1"><18.5</button>
+                        <h6>Underweight</h6>
+                    </div>
+                    <div class="d-flex flex-column align-items-center">
+                        <img class="info-img m2" src="/images/m2.png" alt="photo">
+                        <button class="arrow arrow2">18.5-24.9</button>
+                        <h6>Normal Weight</h6>
+                    </div>
+                    <div class="d-flex flex-column align-items-center">
+                        <img class="info-img m3" src="/images/m3.png" alt="photo">
+                        <button class="arrow arrow3">25-29.9</button>
+                        <h6>Overweight</h6>
+                    </div>
+                    <div class="d-flex flex-column align-items-center">
+                        <img class="info-img m4" src="/images/m4.png" alt="photo">
+                        <button class="arrow arrow4">30-39.9</button>
+                        <h6>Obesity</h6>
+                    </div>
+                    <div class="d-flex flex-column align-items-center">
+                        <img class="info-img m5" src="/images/m5.png" alt="photo">
+                        <button class="arrow arrow5">40<</button>
+                        <h6>Extreme Obesity</h6>
+                    </div>
+                </div>
+            </div>
+            <!--The part that only works when you enter from the phone-->
+            <div class="phone d-flex justify-content-between">
+                <div class="phone-info">
+                    <div class="d-flex flex-column align-items-center">
+                        <button class="arrow arrow1"><18.5</button>
+                        <h5>Underweight</h5>
+                    </div>
+                    <div class="d-flex flex-column align-items-center">
+                        <button class="arrow arrow2">18.5-24.9</button>
+                        <h5>Normal Weight</h5>
+                    </div>
+                    <div class="d-flex flex-column align-items-center">
+                        <button class="arrow arrow3">25-29.9</button>
+                        <h5>Overweight</h5>
+                    </div>
+                    <div class="d-flex flex-column align-items-center">
+                        <button class="arrow arrow4">30-39.9</button>
+                        <h5>Obesity</h5>
+                    </div>
+                    <div class="d-flex flex-column align-items-center">
+                        <button class="arrow arrow5">40<</button>
+                        <h5>Extreme Obesity</h5>
+                    </div>
+                </div>
+                <div class="phone-index">
+                    <div class="d-flex person-index-phone justify-content-center">
+                        <div class="d-flex justify-content-center">
+                            <h6 class="">Your Index: ‏</h6>
+                            <h6 id="result-phone" class="">0.00</h6>
+                        </div>
+                    </div>
+                    <div class="main-photo-phone-div d-flex justify-content-center">
+                        <img class="main-photo-phone" src="/images/m1.png" alt="photo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="main">
+        <div class="main2">
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+        </div>
+        <div class="main2">
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+        </div>
+        <div class="main2">
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+        </div>
+        <div class="main2">
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+        </div>
+        <div class="main2">
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+        </div>
+        <div class="main2">
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+        </div>
+        <div class="main2">
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+        </div>
+        <div class="main2">
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+        </div>
+        <div class="main2">
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+        </div>
+        <div class="main2">
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+        </div>
+        <div class="main2">
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+        </div>
+        <div class="main2">
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+        </div>
+        <div class="main2">
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+        </div>
+    </section>
+
+    <script src="./js/script.js"></script>
+    <script src="./js/bootstrap.bundle.js"></script>
+</body>
+</html>
