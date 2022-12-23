@@ -38,6 +38,14 @@ function resetInputs() {
     resultPhone.innerHTML = "0.00";
     widthNum.style.border = "0.5px solid black";
     heightNum.style.border = "0.5px solid black";
+    
+    if (male.checked) { 
+        mainPhoto.src = "./images/m1.png";
+        mainPhotoPhone.src = "./images/m1.png";
+    } else {
+        mainPhoto.src = "./images/w1.png";
+        mainPhotoPhone.src = "./images/w1.png";
+    }
 }
 
 function calculateFunc() {
